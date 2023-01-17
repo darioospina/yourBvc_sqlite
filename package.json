@@ -4,8 +4,8 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node /server/index.js",
-    "start-client": "npm start --prefix /client" 
+    "start": "node ./server/index.js",
+    "start-client": "npm start --prefix ./client" 
   },
   "repository": {
     "type": "git",
