@@ -15,5 +15,8 @@
     "mysql": "^2.18.1",
     "sqlite3": "^5.1.4"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "electron-rebuild": "^3.2.9"
+  }
 }
