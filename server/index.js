@@ -6,6 +6,7 @@ Where root as your user localhost as your URL and password as your password
 Then run this query to refresh privileges:
 flush privileges;
 */
+// Live version
 // For Project: API, Server, Config DB
 import express from 'express'
 import mysql from 'mysql'
