@@ -16,9 +16,11 @@ import sqlite3 from 'sqlite3'
 
 const app = express();
 const port = 3005;
+
+const pathDB = '../bvcdb.db'.replace('app.asar', 'app.asar.unpacked')
   
 // Opening the DB 
-const db = new sqlite3.Database('../bvcdb.db', sqlite3.OPEN_READWRITE,(err) => {
+const db = new sqlite3.Database(pathDB, sqlite3.OPEN_READWRITE,(err) => {
 if(err){
     return console.error(err.message);
 }
