@@ -20,12 +20,20 @@ const port = 3005;
 const pathDB = '../bvcdb.db'
   
 // Opening the DB 
-const db = new sqlite3.Database(pathDB, sqlite3.OPEN_READWRITE,(err) => {
-if(err){
-    return console.error(err.message);
+// const db = new sqlite3.Database(pathDB, sqlite3.OPEN_READWRITE,(err) => {
+// if(err){
+//     return console.error(err.message);
+// }
+// console.log("Connected to BVC database");
+// });
+let db = null
+try {
+    db = new sqlite3.Database(pathDB, sqlite3.OPEN_READWRITE)
+    console.log("Connected to the DB")
+} catch(err) {
+    console.log(err)
 }
-console.log("Connected to BVC database");
-});
+
   
 app.use(cors({
     origin: '*'  

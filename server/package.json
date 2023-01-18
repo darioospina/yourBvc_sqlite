@@ -16,6 +16,7 @@
   },
   "type": "module",
   "devDependencies": {
+    "@capacitor-community/sqlite": "^3.3.3-test211",
     "electron-rebuild": "^3.2.9",
     "sqlite3": "^5.0.0"
   }
