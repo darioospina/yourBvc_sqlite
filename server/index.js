@@ -9,7 +9,6 @@ flush privileges;
 // Live version
 // For Project: API, Server, Config DB
 import express from 'express'
-import mysql from 'mysql'
 import bodyParser from "body-parser"
 import cors from 'cors'
 import sqlite3 from 'sqlite3'
@@ -17,23 +16,15 @@ import sqlite3 from 'sqlite3'
 const app = express();
 const port = 3005;
 
-const pathDB = '../bvcdb.db'
+const pathDB = '../bvcdb.db'.replace('app.asar', 'app.asar.unpacked');
   
 // Opening the DB 
-// const db = new sqlite3.Database(pathDB, sqlite3.OPEN_READWRITE,(err) => {
-// if(err){
-//     return console.error(err.message);
-// }
-// console.log("Connected to BVC database");
-// });
-let db = null
-try {
-    db = new sqlite3.Database(pathDB, sqlite3.OPEN_READWRITE)
-    console.log("Connected to the DB")
-} catch(err) {
-    console.log(err)
+const db = new sqlite3.Database(pathDB, sqlite3.OPEN_READWRITE,(err) => {
+if(err){
+    return console.error(err.message);
 }
-
+console.log("Connected to BVC database");
+});
   
 app.use(cors({
     origin: '*'  
