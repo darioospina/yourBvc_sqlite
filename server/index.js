@@ -16,7 +16,8 @@ import sqlite3 from 'sqlite3'
 const app = express();
 const port = 3005;
 
-const pathDB = '../bvcdb.db'.replace('app.asar', 'app.asar.unpacked');
+//const pathDB = '../bvcdb.db'
+const pathDB = 'https://www.dario-ospina.com/bvcdb.db'
   
 // Opening the DB 
 const db = new sqlite3.Database(pathDB, sqlite3.OPEN_READWRITE,(err) => {
